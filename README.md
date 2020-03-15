@@ -7,7 +7,7 @@
 - postgres
 - redis
 
-![High-Level Design](./_assets/High-Level_Design.svg)
+![High-Level Design](./_files_/High-Level_Design.svg)
 
 
 ## Current Topology
