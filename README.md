@@ -1,4 +1,4 @@
-# YLZ-XYZ-INFRA
+# YLZ-XYZ-INFRA
 
 - [Infrastructure Project](https://github.com/aytekinyaliz/ylz-xyz-infra)
 - [IAM Service](https://github.com/aytekinyaliz/ylz-xyz-iam-svc)
@@ -10,10 +10,12 @@
 ![High-Level Design](./_files_/High-Level_Design.jpg)
 
 
-## Current Topology
+## Current Topology
+
+
   - Create 3 projects in Firebase
-    - Create service accounts and generate private key (ideally these credentials should be stored in secrets and injected into environment variables via CI pipeline. At the moment they are stored in .env files in the repo for demo purposes).
-    - Create Cloud Firestore for each project (eur3 (europe-west))
+    * Create service accounts and generate private key (ideally these credentials should be stored in secrets and injected into environment variables via CI pipeline. At the moment they are stored in .env files in the repo for demo purposes).
+    * Create Cloud Firestore for each project (eur3 (europe-west))
 
 
 
