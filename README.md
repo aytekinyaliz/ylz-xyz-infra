@@ -59,16 +59,17 @@
 ## Current Topology
 
 
-  - Create 3 projects in Firebase
-    * Create service accounts and generate private key (ideally these credentials should be stored in secrets and injected into environment variables via CI pipeline. At the moment they are stored in .env files in the repo for demo purposes).
-    * Create Cloud Firestore for each project (eur3 (europe-west))
+- Create 3 projects in Firebase
+  * Create service accounts and generate private key (ideally these credentials should be stored in secrets and injected into environment variables via CI pipeline. At the moment they are stored in .env files in the repo for demo purposes).
+  * Create Cloud Firestore for each project (eur3 (europe-west))
 
 
 
 ## TODOs
-  - [ ] Create 1-1 realation b/w email and token <email, { token }>
-  - [ ] JWT validation & Authentication & Authorization in API Gateway
-  - [ ] HTTP layer validations in services
-  - [ ] Logging
-  - [ ] Auditting
-  - [ ] CQRS pattern for fetching data from services
+
+- [ ] Create 1-1 realation b/w email and token <email, { token }>
+- [ ] JWT validation & Authentication & Authorization in API Gateway
+- [ ] HTTP layer validations in services
+- [ ] Logging
+- [ ] Auditting
+- [ ] CQRS pattern for fetching data from services
