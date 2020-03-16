@@ -51,9 +51,9 @@
 - postgres
 - redis
 
-![High-Level Design](./_files_/High-Level_Design.jpg)
+![High-Level Design](./_files/High-Level_Design.jpg)
 
-![DB Design](./_files_/High-Level_Design-DB.jpg)
+![DB Design](./_files/High-Level_Design-DB.jpg)
 
 
 ## Current Topology
