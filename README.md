@@ -9,6 +9,8 @@
 
 ![High-Level Design](./_files_/High-Level_Design.jpg)
 
+![DB Design](./_files_/High-Level_Design-DB.jpg)
+
 
 ## Current Topology
 
