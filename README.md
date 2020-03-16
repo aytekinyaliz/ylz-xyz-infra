@@ -1,6 +1,6 @@
 # YLZ-XYZ-INFRA
 
-# Introduction
+## Introduction
 
 * This task should ideally be completed using Google or Firebase cloud platform.
 * The focus is on the backend, but if possible a method to test the end point from a front end or command line would be preferred.
@@ -8,7 +8,7 @@
 * Good documentation should be used.
 
 
-# Task
+## Task
 
 - A user signs up using the details
   * Unique Email
@@ -28,14 +28,14 @@
   * A device can be part of many projects
 
 
-# Optional Additional Tasks
+## Optional Additional Tasks
 
 - Use a program like “Terraform” to build the infrastructure
 - A file up to 30mb can be uploaded to a project by the projects members
 - The users on a project can view a list of the files and download them
 
 
-# Deliverable
+## Deliverable
 
 - Good commenting and documentation including example restful interface, and test method
 - Upon completion a call will be scheduled to explore the system, thought patens, and your process.
