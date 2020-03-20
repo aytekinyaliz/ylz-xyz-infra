@@ -53,7 +53,7 @@ YLZ-XYZ Project consists of the following components:
 - [Common Library](https://github.com/aytekinyaliz/ylz-xyz-common-mdw)
   
   
-![High-Level Design](./_files/High-Level_Design.jpg)
+![High-Level Design](./_files/High-Level_Design-Architecture.jpg)
 
 ![DB Design](./_files/High-Level_Design-DB.jpg)
 
