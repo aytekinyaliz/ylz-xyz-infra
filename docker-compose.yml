@@ -1,45 +1,55 @@
 version: "3"
 services:
-  ylz-infra-nginx:
-    restart: always
+  ylz-xyz-ui:
     build:
       dockerfile: Dockerfile.dev
-      context: ./ylz-infra-nginx
-    ports:
-      - "3050:80"
-  postgres:
-    image: "postgres:latest"
-  redis:
-    image: "redis:latest"
-  ylz-infra-clt:
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./ylz-infra-clt
+      context: ./ylz-xyz-ui
     volumes:
       - /app/node_modules
-      - ./ylz-infra-clt:/app
-  ylz-infra-svc:
-    build:
-      dockerfile: Dockerfile.dev
-      context: ./ylz-infra-svc
-    volumes:
-      - /app/node_modules
-      - ./ylz-infra-svc:/app
+      - ./ylz-xyz-ui:/app
     environment:
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - PG_HOST=postgres
-      - PG_PORT=5432
-      - PG_DATABASE=postgres
-      - PG_USER=postgres
-      - PG_PASSWORD=postgres_password
-  ylz-infra-wkr:
+      - PORT=1000
+      - REACT_APP_IAM_SERVICE_URI=ylz-xyz-iam-svc
+      - REACT_APP_PROJECT_SERVICE_URI=ylz-xyz-project-svc
+      - REACT_APP_DEVICE_SERVICE_URI=ylz-xyz-device-svc
+      - REACT_APP_FILE_SERVICE_URI=ylz-xyz-file-svc
+  ylz-xyz-iam-svc:
     build:
       dockerfile: Dockerfile.dev
-      context: ./ylz-infra-wkr
+      context: ./ylz-xyz-iam-svc
     volumes:
       - /app/node_modules
-      - ./ylz-infra-wkr:/app
+      - ./ylz-xyz-iam-svc:/app
     environment:
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
+      - PORT=4000
+  ylz-xyz-project-svc:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./ylz-xyz-project-svc
+    volumes:
+      - /app/node_modules
+      - ./ylz-xyz-project-svc:/app
+    environment:
+      - PORT:3000
+      - IAM_SERVICE_URI=ylz-xyz-iam-svc
+      - DEVICE_SERVICE_URI=ylz-xyz-device-svc
+      - FILE_SERVICE_URI=ylz-xyz-file-svc
+  ylz-xyz-device-svc:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./ylz-xyz-device-svc
+    volumes:
+      - /app/node_modules
+      - ./ylz-xyz-device-svc:/app
+    environment:
+      - PORT=5000
+  ylz-xyz-file-svc:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./ylz-xyz-file-svc
+    volumes:
+      - /app/node_modules
+      - ./ylz-xyz-file-svc:/app
+    environment:
+      - PORT=1000
+

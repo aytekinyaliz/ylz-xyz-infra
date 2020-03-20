@@ -43,26 +43,111 @@
 
 - - -
 
-
+YLZ-XYZ Project consists of the following components:
 - [Infrastructure Project](https://github.com/aytekinyaliz/ylz-xyz-infra)
+- [UI Project](https://github.com/aytekinyaliz/ylz-xyz-ui)
 - [IAM Service](https://github.com/aytekinyaliz/ylz-xyz-iam-svc)
 - [Project Service](https://github.com/aytekinyaliz/ylz-xyz-project-svc)
 - [Device Service](https://github.com/aytekinyaliz/ylz-xyz-device-svc)
-- postgres
-- redis
-
+- [Authentication Library](https://github.com/aytekinyaliz/ylz-xyz-auth-mdw)
+- [Common Library](https://github.com/aytekinyaliz/ylz-xyz-common-mdw)
+  
+  
 ![High-Level Design](./_files/High-Level_Design.jpg)
 
 ![DB Design](./_files/High-Level_Design-DB.jpg)
+
+![Pipeline process](./_files/High-Level_Design-Pipeline.jpg)
 
 
 ## Current Topology
 
 
-- Create 3 projects in Firebase
+- Create 1 project in Firebase:  
+  We are using Google Cloud Firebase technology for Database, Storage and Authentication.
+
   * Create service accounts and generate private key (ideally these credentials should be stored in secrets and injected into environment variables via CI pipeline. At the moment they are stored in .env files in the repo for demo purposes).
   * Create Cloud Firestore for each project (eur3 (europe-west))
 
+## How to run locally (needs Node.js)
+
+- Create a new folder:
+  ```
+  $ mkdir ylz-infra
+  $ cd ylz-infra
+  ```
+
+- Clone repositories:
+  ```
+  $ git clone https://github.com/aytekinyaliz/ylz-xyz-ui.git
+  $ git clone https://github.com/aytekinyaliz/ylz-xyz-iam-svc.git
+  $ git clone https://github.com/aytekinyaliz/ylz-xyz-project-svc.git
+  $ git clone https://github.com/aytekinyaliz/ylz-xyz-device-svc.git
+  $ git clone https://github.com/aytekinyaliz/ylz-xyz-file-svc.git
+  ```
+
+- Install dependencies in each folder
+  ```
+  $ cd ylz-xyz-ui
+  $ cd ylz-xyz-iam-svc
+  $ cd ylz-xyz-project-svc
+  $ cd ylz-xyz-device-svc
+  $ cd ylz-xyz-file-svc
+
+  $ npm install
+  ```
+
+- Run applications:
+  ```
+  $ cd ylz-xyz-ui
+  $ cd ylz-xyz-iam-svc
+  $ cd ylz-xyz-project-svc
+  $ cd ylz-xyz-device-svc
+  $ cd ylz-xyz-file-svc
+
+  $ npm start
+  ```
+
+- Navigate to UI application:  
+  http://localhost:2000
+
+## How to run locally with Docker (needs Docker)
+
+- Create a new folder:
+  ```
+  $ mkdir ylz-infra
+  $ cd ylz-infra
+  ```
+
+- Clone repositories:
+  ```
+  $ git clone https://github.com/aytekinyaliz/ylz-xyz-infra.git
+  $ git clone https://github.com/aytekinyaliz/ylz-xyz-ui.git
+  $ git clone https://github.com/aytekinyaliz/ylz-xyz-iam-svc.git
+  $ git clone https://github.com/aytekinyaliz/ylz-xyz-project-svc.git
+  $ git clone https://github.com/aytekinyaliz/ylz-xyz-device-svc.git
+  $ git clone https://github.com/aytekinyaliz/ylz-xyz-file-svc.git
+  ```
+
+- Build docker files:
+  ```
+  $ cd ylz-xyz-ui
+    docker build -t ylz-xyz-ui .
+  $ cd ylz-xyz-iam-svc
+    docker build -t ylz-xyz-iam-svc .
+  $ cd ylz-xyz-project-svc
+    docker build -t ylz-xyz-project-svc .
+  $ cd ylz-xyz-device-svc
+    docker build -t ylz-xyz-device-svc .
+  $ cd ylz-xyz-file-svc
+    docker build -t ylz-xyz-file-svc .
+  ```
+
+- Run docker files:
+  ```
+  $ cd ylz-xyz-infra
+  $ docker-compose up -d build
+  ```
 
 
 ## TODOs
