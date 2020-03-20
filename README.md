@@ -150,9 +150,8 @@ YLZ-XYZ Project consists of the following components:
   ```
 
 
-## TODOs
+## Improvements
 
-- [ ] Create 1-1 realation b/w email and token <email, { token }>
 - [ ] JWT validation & Authentication & Authorization in API Gateway
 - [ ] HTTP layer validations in services
 - [ ] Logging
