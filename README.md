@@ -62,12 +62,10 @@ YLZ-XYZ Project consists of the following components:
 
 ## Current Topology
 
-
 - Create 1 project in Firebase:  
-  We are using Google Cloud Firebase technology for Database, Storage and Authentication.
+  We are using Google Cloud Firebase technology for Database, Storage and Authentication. All the backend services are using the service account at the moment.
+- All of the services are hosted on GCP and the public url for the UI is: http://35.198.97.150.
 
-  * Create service accounts and generate private key (ideally these credentials should be stored in secrets and injected into environment variables via CI pipeline. At the moment they are stored in .env files in the repo for demo purposes).
-  * Create Cloud Firestore for each project (eur3 (europe-west))
 
 ## How to run locally (needs Node.js)
 
