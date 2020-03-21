@@ -55,7 +55,7 @@ YLZ-XYZ Project consists of the following components:
   
 ![High-Level Design](./_files/High-Level_Design-Architecture.jpg)
 
-![Kubernetes Infrastructure](./_files/High-Level_Design-Kubernetes.jpg)
+![Kubernetes Infrastructure](./_files/High-Level_Design-K8s.jpg)
 
 ![DB Design](./_files/High-Level_Design-DB.jpg)
 
